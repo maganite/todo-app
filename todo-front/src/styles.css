@@ -1,0 +1,157 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #f3bdd7, #007AFF, #FFFFFF);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .title-page {
+    margin-bottom: 20px;
+    text-align: center;
+    color: white;
+    font-size: 60px; /* Increased text size */
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Changed to a funkier font */
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 1px #ffffff, 0 0 40px #ffffff;
+  }
+  
+  ul {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  li {
+    margin-bottom: 10px;
+    background-color: #ebebdf;
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80vw; /* Set the width of li to be 80% of the viewport width */
+    border: 2px solid #000; /* Added a border to li elements */
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin-top: 20px;
+    align-items: center;
+  }
+  
+  .todo-actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .list-button, .add-todo-link {
+    margin-right: 5px;
+    background-color: #0056b3;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none; /* Remove link styling */
+    padding: 4px 2px;
+    margin: 0 2px;
+    min-width: 90px;
+    box-sizing: border-box;
+    border-radius: 10px;
+  }
+
+  .add-todo-link {
+    background-color: #0056b3;
+    padding: 10px 24px;
+    margin: 10px 5px;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+
+  .todo-list-container {
+    height: 70vh; /* Adjusted to 70% of the viewport height */
+    width: 70vw; /* Adjusted to 70% of the viewport width */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .todo-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    margin-top: 30px;
+  }
+
+  .todo-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .todo-input {
+    padding: 15px; /* Increased padding for bigger fields */
+    margin-bottom: 20px; /* Increased margin for bigger spacing */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: calc(100% - 30px); /* Adjusted width based on increased padding */
+    font-size: 18px; /* Increased font size for better readability */
+  }
+
+  .add-todo-b {
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 15px 20px; /* Increased padding for a bigger button */
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px; /* Increased font size for better readability */
+    margin: 6px 2px; /* Adjusted margin for better spacing */
+    transition-duration: 0.4s;
+  }
+
+  .add-todo-b:hover {
+    background-color: #0056b3;
+    color: white;
+  }
+
+  .title-page1 {
+    margin-bottom: 25px; /* Increased margin for better spacing */
+    color: #333;
+    font-size: 28px; /* Increased font size for better visibility */
+  }
+
+  .done {
+    background-color: #98fb73;
+  }
+
+  .done1 {
+    text-decoration: line-through;
+    color: #060606;
+  }
+
+  .donebtn {
+    text-decoration: line-through;
+    color: #060606;
+    background-color: #b4b2b2;
+  }
+
