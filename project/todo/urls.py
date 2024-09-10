@@ -6,6 +6,7 @@ app_name = 'todo'
 url_patterns = [
     path('todo/', TodoListAPIView.as_view(), name="todo_list"),
     path('todo/<int:pk>', TodoAPIView.as_view(), name="todo"),
+    path('todo/reminder/<int:pk>', ReminderView.as_view(), name="todo_reminder"),
 ]
 
 

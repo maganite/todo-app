@@ -14,6 +14,7 @@ class Todo(models.Model):
         choices=TaskStatus.choices,
         default=TaskStatus.PENDING,
     )
+    reminder_time=models.DateTimeField(null=True, blank=True)
 
     def __str__(self):
         return f"Title ({self.title})"
