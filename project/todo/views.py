@@ -16,11 +16,18 @@ class TodoListAPIView(generics.ListCreateAPIView):
     queryset = Todo.objects.all()
 
     def post(self, request):
-        serializers = self.get_serializer(data=request.data)
-        if serializers.is_valid():
-            serializers.save()
-            full_data = TodoSerializers(Todo.objects.all(), many=True)
-            return Response(full_data.data, status=status.HTTP_201_CREATED)
+        print(request.data)
+        print(request.data.get('title'))
+        print(request.data.get('description'))
+        valid_todo = Todo.objects.filter(title=request.data.get('title'), description=request.data.get('description'))
+        print(valid_todo)
+        if valid_todo.exists():
+            return Response({"message": "Todo already created"}, status=status.HTTP_302_FOUND)
+        else:
+            serializers = self.get_serializer(data=request.data)
+            if serializers.is_valid():
+                serializers.save()
+                return Response(serializers.data, status=status.HTTP_201_CREATED)
 
 
 
@@ -28,23 +35,20 @@ class TodoAPIView(APIView):
     def check(self, pk):
         try:
             obj = Todo.objects.get(id=pk)
-            serializer = TodoSerializers(obj)
             return obj
         except Exception as e:
-            print("the id doesnot exist")
-            raise ValidationError(e)
+            raise ValidationError({e})
 
-    def get(self,request, *args, **kwargs):
+    def get(self,request,pk):
         # print(request.data)
-        print(kwargs)
-        valid_object = self.check(kwargs["pk"])
+        print(pk)
+        valid_object = self.check(pk)
         serializer = TodoSerializers(valid_object)
         return Response(serializer.data, status=status.HTTP_200_OK)
         
     def patch(self, request, pk):
-        print(pk)
         valid_object = self.check(pk)
-        print("hello")
+        print(request.data)
         serializer = TodoSerializers(valid_object, data=request.data, partial=True)
         if serializer.is_valid():
             serializer.save()
@@ -53,8 +57,9 @@ class TodoAPIView(APIView):
 
     def delete(self, request, pk):
         valid_object = self.check(pk)
+        Description = valid_object.title
         valid_object.delete()
-        return Response(status=status.HTTP_200_OK)
+        return Response({"meaagse": f"Todo with title({Description}) is Deleted"}, status=status.HTTP_200_OK)
     
 class ReminderView(APIView):
     def get(self, request, *args, **kwargs):

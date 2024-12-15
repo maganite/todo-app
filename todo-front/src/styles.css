@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to right, #f3bdd7, #007AFF, #FFFFFF);
+    background: linear-gradient(#7d7d6f, #000000, #7d7d6f);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,7 +15,6 @@ body {
     color: white;
     font-size: 60px; /* Increased text size */
     font-family: 'Comic Sans MS', cursive, sans-serif; /* Changed to a funkier font */
-    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 1px #ffffff, 0 0 40px #ffffff;
   }
   
   ul {
@@ -55,8 +54,8 @@ body {
   
   .list-button, .add-todo-link {
     margin-right: 5px;
-    background-color: #0056b3;
-    color: #fff;
+    background-color: #000000;
+    color: #fffdfd;
     border: none;
     cursor: pointer;
     display: inline-flex;
@@ -71,7 +70,9 @@ body {
   }
 
   .add-todo-link {
-    background-color: #0056b3;
+    background-color: #000000;
+    border-style:solid ;
+    border-color: rgb(255, 255, 255);
     padding: 10px 24px;
     margin: 10px 5px;
     font-size: 16px;
